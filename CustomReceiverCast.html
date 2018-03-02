@@ -18,22 +18,6 @@
     const context = cast.framework.CastReceiverContext.getInstance();
     const playerManager = context.getPlayerManager();
     
-    playerManager.setMessageInterceptor(
-        cast.framework.messages.MessageType.LOAD, loadRequestData => {
-            if (loadRequestData.media && loadRequestData.media.contentId) {
-                return thirdparty.getMediaById(loadRequestData.media.contentId)
-                .then(media => {
-                  if (media) {
-                    loadRequestData.media.contentUrl = media.url;
-                    loadRequestData.media.contentType = media.contentType;
-                    loadRequestData.media.metadata = media.metadata;
-                  }
-                  return loadRequestData;
-                });
-            }
-            return loadRequestData;
-        });
-    
     const playbackConfig = new cast.framework.PlaybackConfig();
     playbackConfig.manifestRequestHandler = requestInfo => {
       requestInfo.withCredentials = true;
