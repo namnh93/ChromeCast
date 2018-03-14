@@ -1,8 +1,8 @@
 .background {
-  background: center no-repeat url(Pocket_Queries_logo.png);
+  background: #fff;
 }
 .logo {
-  background-image: url(http://beetsoft.com.vn/wp-content/uploads/2018/02/logo.png);
+  background-image: url(Pocket_Queries_logo.png);
 }
 .progressBar {
   background-color: rgb(0, 255, 0);
